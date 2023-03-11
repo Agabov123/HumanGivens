@@ -23,34 +23,16 @@ export function Info({ navigation }) {
           scientific understandings from neurobiology and psychology, as well as
           ancient wisdom and original new insights.
         </Text>
-
-        <TouchableOpacity
-          style={LoginStyle.LogInButton}
-          title="Location"
-          onPress={() => navigation.navigate("VetsMap")}
-        >
-          <Text style={LoginStyle.buttonText}>Location</Text>
-        </TouchableOpacity>
       </List.Accordion>
 
       <List.Accordion
         style={LoginStyle.buttonText}
-        title="Pet Shops"
+        title="Useful Links"
         left={(props) => <List.Icon {...props} icon="store" />}
       >
         <Text style={LoginStyle.LogInButton}>
-          Find an exotic pet shop near you that. There are shopss that sellitems
-          for a large variety of exotics pets including small mammals, birds,
-          reptiles, invertebrate, amphibians and fish.
+          "https://www.geeksforgeeks.org";
         </Text>
-
-        <TouchableOpacity
-          style={LoginStyle.LogInButton}
-          title="Location"
-          onPress={() => navigation.navigate("ShopsMap")}
-        >
-          <Text style={LoginStyle.buttonText}>Location</Text>
-        </TouchableOpacity>
       </List.Accordion>
     </List.Section>
   );

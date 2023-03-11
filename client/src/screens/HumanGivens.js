@@ -9,7 +9,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { styles } from "../styles";
-import { AnimalDetails } from "../components/animalDetails";
 import { ButtonStyles } from "../components/WelcomePage/MainButtonsStyle";
 import { WelcomeBannerStyle } from "../components/WelcomePage/WelcomeBanner/WelcomeBannerStyle";
 
@@ -18,12 +17,6 @@ export function HumanGivens({ navigation }) {
   const [animals, setAnimals] = useState([]);
 
   const localIP = process.env.SERVER_ADDRESS || "10.64.0.232";
-
-  const renderDetails = () => {
-    return animals.map((animal, index) => {
-      return <AnimalDetails key={index} data={animal} />;
-    });
-  };
 
   React.useEffect(() => {
     fetch(`http://localhost:8000/animals/find?chosen=${pet}`)
