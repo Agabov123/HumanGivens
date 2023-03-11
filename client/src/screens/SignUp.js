@@ -83,7 +83,7 @@ export function SignUp({ navigation }) {
                 onChangeText={handleChange("email")}
                 onBlur={handleBlur("email")}
                 value={values.email}
-                placeholder="myemail@ratify.com"
+                placeholder="myemail@humangivens.com"
               />
 
               <TextInput

@@ -1,27 +1,25 @@
 const User = require("../../models/user");
 const mongoose = require("mongoose");
-require('dotenv').config({ path: './config.env' });
+require("dotenv").config({ path: "./config.env" });
 
-// const Db = process.env.ATLAS_URI || 'mongodb://0.0.0.0/ratify';
+// const Db = process.env.ATLAS_URI || 'mongodb://0.0.0.0/hg';
 // const Db = process.env.ATLAS_URI;
-const Db = 'mongodb://0.0.0.0/ratify_test';
+const Db = "mongodb://0.0.0.0/hg_test";
 
-const seedingUsers = () => { 
+const seedingUsers = () => {
   mongoose
-  .connect(Db, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => {
-    console.log('connection established!');
-  })
-  .then(() => 
-    seedDB()
-  )
-  .catch((err) => {
-    console.log(err);
-  });
-}
+    .connect(Db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    .then(() => {
+      console.log("connection established!");
+    })
+    .then(() => seedDB())
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 const userSeeds = [
   {

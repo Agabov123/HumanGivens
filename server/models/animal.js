@@ -2,12 +2,15 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const AnimalSchema = new Schema({
-  animal: { type: String, required: true },
-  description: { type: String, required: true },
-  order: { type: String, required: true },
-  careInfo: { type: String, required: true },
-  foodURL: { type: String, required: false },
-  nonToxicPlants: [{ type: String, required: false }],
+  testDate: {
+    type: Date,
+    default: () => Date.now(),
+  },
+  answer1: { type: String, required: true },
+  answer2: { type: String, required: true },
+  answer3: { type: String, required: true },
+  answer4: { type: String, required: false },
+  answer5: [{ type: String, required: false }],
 });
 
 const Animal = mongoose.model("Animal", AnimalSchema);

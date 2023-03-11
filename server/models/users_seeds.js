@@ -1,24 +1,22 @@
-const User = require('./user');
-const mongoose = require('mongoose');
-require('dotenv').config({ path: '../bin/config.env' });
+const User = require("./user");
+const mongoose = require("mongoose");
+require("dotenv").config({ path: "../bin/config.env" });
 
-// const Db = process.env.ATLAS_URI || 'mongodb://0.0.0.0/ratify';
+// const Db = process.env.ATLAS_URI || 'mongodb://0.0.0.0/hg';
 const Db = process.env.ATLAS_URI;
-// const Db = 'mongodb://0.0.0.0/ratify';
+// const Db = 'mongodb://0.0.0.0/hg';
 
 // console.log(Db);
 
 mongoose
   .connect(Db, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
   .then(() => {
-    console.log('connection established!');
+    console.log("connection established!");
   })
-  .then(() => 
-    seedDB()
-  )
+  .then(() => seedDB())
   .then(() => {
     mongoose.connection.close();
   })
@@ -28,54 +26,54 @@ mongoose
 
 const userSeeds = [
   {
-    email: 'test@test.com',
-    password: 'Mypassword1&',
-    firstName: 'Elena',
-    lastName: 'Lopez',
-    animal: 'rat',
+    email: "test@test.com",
+    password: "Mypassword1&",
+    firstName: "Elena",
+    lastName: "Lopez",
+    animal: "rat",
   },
   {
-    email: 'Peter@email.com',
-    password: 'Mypassword1&',
-    firstName: 'Peter',
-    lastName: 'Strange',
+    email: "Peter@email.com",
+    password: "Mypassword1&",
+    firstName: "Peter",
+    lastName: "Strange",
   },
- {
-    email: 'johndoe@gmail.com',
-    password: 'Mypassword1&',
-    firstName: 'John',
-    lastName: 'Doe',
-    animal: 'rat',
+  {
+    email: "johndoe@gmail.com",
+    password: "Mypassword1&",
+    firstName: "John",
+    lastName: "Doe",
+    animal: "rat",
     isABreeder: true,
     verifiedBreeder: {
       status: false,
-      county: 'London',
-      association:'Fancy Rats',
-      website:'www.ratbreeder.com',
-    }
+      county: "London",
+      association: "Fancy Rats",
+      website: "www.ratbreeder.com",
+    },
   },
   {
-    email: 'sam@gmail.com',
-    password: 'Mypassword1&',
-    firstName: 'Sam',
-    lastName: 'Smith',
-    animal: 'rat',
+    email: "sam@gmail.com",
+    password: "Mypassword1&",
+    firstName: "Sam",
+    lastName: "Smith",
+    animal: "rat",
     isABreeder: true,
     verifiedBreeder: {
       status: true,
-      county: 'London',
-      association:'Fancy Rats',
-      website:'www.ratbreeder2.com',
-    }
+      county: "London",
+      association: "Fancy Rats",
+      website: "www.ratbreeder2.com",
+    },
   },
 ];
 
 const seedDB = async () => {
   const res = await User.deleteMany({});
-  console.log("seeds deleted")
+  console.log("seeds deleted");
   const res2 = await User.insertMany(userSeeds);
-  console.log("seeds saved")
-  const allUsers = await User.find()
+  console.log("seeds saved");
+  const allUsers = await User.find();
 };
 
 module.exports = userSeeds;

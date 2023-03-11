@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "ratify",
-    "slug": "ratify",
+    "name": "humangivens",
+    "slug": "humangivens",
     "owner": "cyberrats",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/ratifyLogo.png",
+    "icon": "./assets/humangivens_logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/ratifyLogoTransparent.png",
+      "image": "./assets/humangivens_logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,12 +23,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/ratifyLogo.png",
+        "foregroundImage": "./assets/humangivens_logo.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/ratifyLogo.png"
+      "favicon": "./assets/humangivens_logo.png"
     }
   }
 }

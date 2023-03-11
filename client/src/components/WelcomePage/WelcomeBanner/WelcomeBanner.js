@@ -7,7 +7,7 @@ export function WelcomeBanner({}) {
       <Text style={WelcomeBannerStyle.welcomeText}>Human Givens</Text>
       <Image
         style={WelcomeBannerStyle.image}
-        source={require("../../../../assets/ratifyLogoTransparent.png")}
+        source={require("../../../../assets/humangivens_logo.png")}
       />
     </View>
   );
